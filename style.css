@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Patrick Hand', cursive;
+}
+
+
+body {
+  background:
+    url("images/paper.jpg"),
+    linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+  background-size: cover;
+  background-blend-mode: multiply;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  position: relative;
+  background: white;
+  padding: 30px;
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+.container::before,
+.container::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background:
+    radial-gradient(circle at 10px 10px, transparent 8px, white 9px),
+    radial-gradient(circle at 30px 10px, transparent 8px, white 9px),
+    radial-gradient(circle at 50px 10px, transparent 8px, white 9px),
+    radial-gradient(circle at 70px 10px, transparent 8px, white 9px);
+  background-size: 40px 20px;
+}
+
+.container::before {
+  top: 0;
+  transform: rotate(180deg);
+}
+
+.container::after {
+  bottom: 0;
+}
+
+
+h1 {
+    letter-spacing: 1px;
+  color: #ff4d6d;
+}
+
+.photos img,
+.cats img {
+  width: 45%;
+  border-radius: 15px;
+  margin: 5px;
+}
+
+.buttons {
+  margin-top: 20px;
+  position: relative;
+  height: 80px; /* creates movement area */
+}
+
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#yesBtn {
+  background-color: #ff4d6d;
+  color: white;
+}
+
+#noBtn {
+  background-color: #ddd;
+  position: absolute;
+}
+
+#message {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #ff4d6d;
+}
+.polaroid {
+  position: relative;
+  background: white;
+  padding: 10px 10px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  transform: rotate(-3deg);
+}
+
+
+.polaroid img {
+  width: 150px;
+  height: 220px;      /* elongates the photo */
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.polaroid p {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: #555;
+}
+.polaroid::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 40%;
+  width: 70px;
+  height: 22px;
+  background: rgba(255, 224, 178, 0.8);
+  border-radius: 4px;
+  transform: rotate(-8deg);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+/* Overlay background */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+/* Letter popup animation */
+.letter {
+  background: #fffdf7;
+  padding: 24px;
+  width: 85%;
+  max-width: 380px;
+  border-radius: 8px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  transform: scale(0.7);
+  opacity: 0;
+  animation: popLetter 0.6s ease forwards;
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* Pop animation */
+@keyframes popLetter {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.hidden {
+  display: none !important;
+}
+
+
