@@ -6,7 +6,7 @@
 
 body {
   background:
-    url("images/paper.jpg"),
+    url("paper.jpg"),
     linear-gradient(to bottom right, #ff9a9e, #fad0c4);
   background-size: cover;
   background-blend-mode: multiply;
